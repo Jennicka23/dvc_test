@@ -1,0 +1,5 @@
+outs:
+- md5: b265ce845922d5c969381e0c9a09459c
+  size: 9877182037
+  hash: md5
+  path: openfoodfacts-products.jsonl.gz

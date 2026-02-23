@@ -205,3 +205,31 @@ stages:
       md5: 896ea3a78620cef16905a8eb0284e924.dir
       size: 1273879
       nfiles: 4
+  split_data:
+    cmd: python src-modeling/1.0_split_dataset.py
+    deps:
+    - path: results/data_def.csv
+      hash: md5
+      md5: afb9d8a1ee4f7e74bb293f0553af227b
+      size: 54659768
+    - path: src-modeling/1.0_split_dataset.py
+      hash: md5
+      md5: 73f4b0514fe860a3ffd7a9759dcc0298
+      size: 5036
+    outs:
+    - path: gen/data_def_test.csv
+      hash: md5
+      md5: acc7737051ce4eac318acb55b94c2103
+      size: 23541963
+    - path: gen/data_def_train.csv
+      hash: md5
+      md5: dfc128ae659522e57ef25406179c3323
+      size: 55177911
+    - path: gen/main_stratify_counts.csv
+      hash: md5
+      md5: 7a83bf8c820fc071b39db06b5ca8e944
+      size: 1310
+    - path: gen/main_stratify_counts_after_threshold.csv
+      hash: md5
+      md5: 91791fc830c527737269e256798a5f0b
+      size: 1012

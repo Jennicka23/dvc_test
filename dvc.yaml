@@ -1,5 +1,5 @@
 stages:
-  prepare_data:
+  retrieve:
     cmd: python src-preparation/1_retrieve_dataset.py
     deps:
       - src-preparation/1_retrieve_dataset.py
@@ -7,3 +7,15 @@ stages:
     outs:
       - gen/off_selected_fields_filtered.csv
       - gen/openfoodfacts_10records.txt
+
+  prepare:
+    cmd: Rscript src-preparation/2_prepare_data.R
+    deps:
+      - src-preparation/2_prepare_data.R
+      - gen/off_selected_fields_filtered.csv
+    outs:
+      - gen/main_data.csv
+      - gen/label_freq.csv
+      - gen/labels_long.csv
+      - gen/categories_long.csv
+      - gen/categories_wide.csv

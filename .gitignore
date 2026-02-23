@@ -12,3 +12,4 @@
 *.xlsx
 *.png
 .ipynb_checkpoints
+/plots

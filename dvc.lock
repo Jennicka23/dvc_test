@@ -72,3 +72,39 @@ stages:
       hash: md5
       md5: f16b9630ba58a5ac80f6595863d315b1
       size: 121448048
+  category_mapping:
+    cmd: Rscript src-preparation/3_category_mapping.R
+    deps:
+    - path: gen/categories_long.csv
+      hash: md5
+      md5: 6bd2ef7d52115b167f7edb3282fb93fa
+      size: 77892925
+    - path: gen/categories_wide.csv
+      hash: md5
+      md5: 06318a920b79e6a3241fb8b742f930d1
+      size: 66297866
+    - path: gen/main_data.csv
+      hash: md5
+      md5: f16b9630ba58a5ac80f6595863d315b1
+      size: 121448048
+    - path: src-preparation/3_category_mapping.R
+      hash: md5
+      md5: 05edc0d18dc8f69a3de4f318902d934e
+      size: 12066
+    outs:
+    - path: gen/cat_harmonized_freq.csv
+      hash: md5
+      md5: e6c6ee43227faa2e9adb798c8d555862
+      size: 1576
+    - path: gen/category_mapped_data.csv
+      hash: md5
+      md5: e90c8d6b04eec8cb6a8cb42467e153d8
+      size: 42760521
+    - path: gen/category_mapped_filtered.csv
+      hash: md5
+      md5: 10caa8930e86e4dc312e9a6520d9d4d9
+      size: 39186278
+    - path: gen/rule_hits.csv
+      hash: md5
+      md5: 8964d1584275054264caba68fe2253a8
+      size: 35460688

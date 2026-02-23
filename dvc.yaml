@@ -32,3 +32,15 @@ stages:
       - gen/cat_harmonized_freq.csv
       - gen/category_mapped_data.csv
       - gen/category_mapped_filtered.csv
+
+  label_mapping:
+    cmd: Rscript src-preparation/4_label_mapping.R
+    deps:
+      - src-preparation/4_label_mapping.R
+      - gen/category_mapped_filtered.csv
+      - gen/labels_long.csv
+      - data/labels_mapping.xlsx
+    outs:
+      - gen/label_mapped_filtered.csv
+      - gen/labels_def.csv
+      - gen/labels_string_df.csv

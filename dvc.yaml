@@ -79,3 +79,12 @@ stages:
       - gen/main_stratify_counts_after_threshold.csv
       - gen/data_def_train.csv
       - gen/data_def_test.csv
+
+  tag_test_set:
+    cmd: python src-modeling/1.1_test_dataset.py
+    deps:
+      - src-modeling/1.1_test_dataset.py
+      - gen/data_def_test.csv
+    outs:
+      - gen/data_def_test.csv:
+          cache: true

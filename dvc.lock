@@ -140,3 +140,43 @@ stages:
       hash: md5
       md5: b6f7fa31d117f5b80669181e28156af3
       size: 34758863
+  final_dataset:
+    cmd: Rscript src-preparation/5_create_final_dataset.R
+    deps:
+    - path: gen/label_mapped_filtered.csv
+      hash: md5
+      md5: a8a3710dde001257c1087be19a9b91d1
+      size: 46269243
+    - path: gen/off_selected_fields_filtered.csv
+      hash: md5
+      md5: 01cc324969a6352dbaed554bb7f8cc0f
+      size: 1363560418
+    - path: src-preparation/5_create_final_dataset.R
+      hash: md5
+      md5: e8bea312cff3e028c60b5375b9d564e2
+      size: 3803
+    outs:
+    - path: gen/data_def_cat1.csv
+      hash: md5
+      md5: 5333354116017e104e9576d47d3038bb
+      size: 17104759
+    - path: gen/data_def_cat12.csv
+      hash: md5
+      md5: 8ba1c75b73002583afd62c0699406518
+      size: 50374419
+    - path: gen/data_def_cat123.csv
+      hash: md5
+      md5: afb9d8a1ee4f7e74bb293f0553af227b
+      size: 54659768
+    - path: gen/data_def_cat23.csv
+      hash: md5
+      md5: 43f5f93dc54dd4ac05faf3c229b6b011
+      size: 46398858
+    - path: gen/data_def_cat3.csv
+      hash: md5
+      md5: e72749cb0a11ce76e4a27467e87801d7
+      size: 13647062
+    - path: results/data_def.csv
+      hash: md5
+      md5: afb9d8a1ee4f7e74bb293f0553af227b
+      size: 54659768

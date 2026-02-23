@@ -82,3 +82,11 @@ stages:
         - gen/data_def_test.csv
         - gen/main_stratify_counts.csv
         - gen/main_stratify_counts_after_threshold.csv
+
+  create_folds:
+    cmd: python src-modeling/1.2_train_val_dataset.py
+    deps:
+      - src-modeling/1.2_train_val_dataset.py
+      - gen/data_def_train.csv
+    outs:
+      - gen/data_def_train_folds.csv

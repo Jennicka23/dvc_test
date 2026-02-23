@@ -68,3 +68,14 @@ stages:
       - gen/labels_long.csv
     outs:
       - plots/
+
+  split_data:
+    cmd: python src-modeling/1_split_data.py
+    deps:
+      - src-modeling/1_split_data.py
+      - results/data_def.csv
+    outs:
+      - gen/main_stratify_counts.csv
+      - gen/main_stratify_counts_after_threshold.csv
+      - gen/data_def_train.csv
+      - gen/data_def_test.csv

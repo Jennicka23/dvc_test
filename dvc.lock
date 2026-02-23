@@ -283,3 +283,40 @@ stages:
       hash: md5
       md5: 8594e734f109620ac96d9100e040c67d
       size: 55997722
+  eval_nutri_baseline:
+    cmd: python src-modeling/2.0.1_eval_nutri_baseline.py
+    deps:
+    - path: gen/data_def_test.csv
+      hash: md5
+      md5: 0837225d6f666c7b6d41e8197bf948ad
+      size: 24065401
+    - path: gen/data_def_train_folds.csv
+      hash: md5
+      md5: 8594e734f109620ac96d9100e040c67d
+      size: 55997722
+    - path: src-modeling/2.0.1_eval_nutri_baseline.py
+      hash: md5
+      md5: f800a1a0f400573e489f029ed65eb5ab
+      size: 9603
+    params:
+      params.yaml:
+        baseline:
+          solver: saga
+          random_state: 42
+    outs:
+    - path: results/data_def_test_with_baseline_nutri_preds.csv
+      hash: md5
+      md5: fa7e2784d604b77dfd8a0a0859045f00
+      size: 28466459
+    - path: results/data_def_train_with_baseline_nutri_preds.csv
+      hash: md5
+      md5: c75fd5b6589bacc9df852b6a5029e572
+      size: 66279886
+    - path: results/logreg_nutri_eval_metrics_train_test_core.csv
+      hash: md5
+      md5: 513586c9453f6bb5eb6592fb9df48c92
+      size: 2431
+    - path: results/logreg_nutri_phase_coverage_stats.csv
+      hash: md5
+      md5: 9be8dbc660ddddbc9a7a6d891ab03f91
+      size: 516

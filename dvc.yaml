@@ -19,3 +19,16 @@ stages:
       - gen/labels_long.csv
       - gen/categories_long.csv
       - gen/categories_wide.csv
+
+  category_mapping:
+    cmd: Rscript src-preparation/3_category_mapping.R
+    deps:
+      - src-preparation/3_category_mapping.R
+      - gen/main_data.csv
+      - gen/categories_wide.csv
+      - gen/categories_long.csv
+    outs:
+      - gen/rule_hits.csv
+      - gen/cat_harmonized_freq.csv
+      - gen/category_mapped_data.csv
+      - gen/category_mapped_filtered.csv

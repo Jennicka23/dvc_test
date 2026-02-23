@@ -20,3 +20,55 @@ stages:
       hash: md5
       md5: 0e2845e430750f1893590383a74a17fe
       size: 227002
+  retrieve:
+    cmd: python src-preparation/1_retrieve_dataset.py
+    deps:
+    - path: data/openfoodfacts-products.jsonl.gz
+      hash: md5
+      md5: b265ce845922d5c969381e0c9a09459c
+      size: 9877182037
+    - path: src-preparation/1_retrieve_dataset.py
+      hash: md5
+      md5: ef5f74af6198070a2e0935376f70327d
+      size: 6420
+    outs:
+    - path: gen/off_selected_fields_filtered.csv
+      hash: md5
+      md5: 01cc324969a6352dbaed554bb7f8cc0f
+      size: 1363560418
+    - path: gen/openfoodfacts_10records.txt
+      hash: md5
+      md5: 0e2845e430750f1893590383a74a17fe
+      size: 227002
+  prepare:
+    cmd: Rscript src-preparation/2_prepare_data.R
+    deps:
+    - path: gen/off_selected_fields_filtered.csv
+      hash: md5
+      md5: 01cc324969a6352dbaed554bb7f8cc0f
+      size: 1363560418
+    - path: src-preparation/2_prepare_data.R
+      hash: md5
+      md5: d3ea8c77084a73fa42d23d0e357e94cd
+      size: 3191
+    outs:
+    - path: gen/categories_long.csv
+      hash: md5
+      md5: 6bd2ef7d52115b167f7edb3282fb93fa
+      size: 77892925
+    - path: gen/categories_wide.csv
+      hash: md5
+      md5: 06318a920b79e6a3241fb8b742f930d1
+      size: 66297866
+    - path: gen/label_freq.csv
+      hash: md5
+      md5: 721762af7aa34f077ed8fc97927863de
+      size: 393331
+    - path: gen/labels_long.csv
+      hash: md5
+      md5: 3150ddd797cf27ec644456304a160e8b
+      size: 31244498
+    - path: gen/main_data.csv
+      hash: md5
+      md5: f16b9630ba58a5ac80f6595863d315b1
+      size: 121448048

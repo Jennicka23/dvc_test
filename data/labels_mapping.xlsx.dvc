@@ -1,0 +1,5 @@
+outs:
+- md5: ce339f1f5c5b6cdcf11a168601cb7b27
+  size: 485567
+  hash: md5
+  path: labels_mapping.xlsx

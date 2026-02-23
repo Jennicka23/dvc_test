@@ -44,3 +44,17 @@ stages:
       - gen/label_mapped_filtered.csv
       - gen/labels_def.csv
       - gen/labels_string_df.csv
+
+  final_dataset:
+    cmd: Rscript src-preparation/5_create_final_dataset.R
+    deps:
+      - src-preparation/5_create_final_dataset.R
+      - gen/label_mapped_filtered.csv
+      - gen/off_selected_fields_filtered.csv
+    outs:
+      - results/data_def.csv
+      - gen/data_def_cat1.csv
+      - gen/data_def_cat12.csv
+      - gen/data_def_cat123.csv
+      - gen/data_def_cat3.csv
+      - gen/data_def_cat23.csv

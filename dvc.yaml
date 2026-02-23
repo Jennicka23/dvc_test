@@ -90,3 +90,17 @@ stages:
       - gen/data_def_train.csv
     outs:
       - gen/data_def_train_folds.csv
+
+  eval_nutri_baseline:
+    cmd: python src-modeling/2.0.1_eval_nutri_baseline.py
+    params:
+      - baseline
+    deps:
+      - src-modeling/2.0.1_eval_nutri_baseline.py
+      - gen/data_def_train_folds.csv
+      - gen/data_def_test.csv
+    outs:
+      - results/logreg_nutri_eval_metrics_train_test_core.csv
+      - results/logreg_nutri_phase_coverage_stats.csv
+      - results/data_def_train_with_baseline_nutri_preds.csv
+      - results/data_def_test_with_baseline_nutri_preds.csv

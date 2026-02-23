@@ -1,0 +1,3 @@
+baseline:
+  solver: "saga"
+  random_state: 42

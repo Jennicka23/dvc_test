@@ -1,0 +1,10 @@
+[core]
+    remote = myscaleway
+['remote "scaleway"']
+    url = s3://openfoodfacts
+    endpointurl = https://openfoodfacts.s3.nl-ams.scw.cloud
+    region = nl-ams
+['remote "myscaleway"']
+    url = s3://openfoodfacts/
+    endpointurl = https://s3.nl-ams.scw.cloud
+    profile = scaleway

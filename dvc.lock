@@ -108,3 +108,35 @@ stages:
       hash: md5
       md5: 8964d1584275054264caba68fe2253a8
       size: 35460688
+  label_mapping:
+    cmd: Rscript src-preparation/4_label_mapping.R
+    deps:
+    - path: data/labels_mapping.xlsx
+      hash: md5
+      md5: ce339f1f5c5b6cdcf11a168601cb7b27
+      size: 485567
+    - path: gen/category_mapped_filtered.csv
+      hash: md5
+      md5: 10caa8930e86e4dc312e9a6520d9d4d9
+      size: 39186278
+    - path: gen/labels_long.csv
+      hash: md5
+      md5: 3150ddd797cf27ec644456304a160e8b
+      size: 31244498
+    - path: src-preparation/4_label_mapping.R
+      hash: md5
+      md5: 08d2f1de41a9e287f17c5495f7d2f182
+      size: 3294
+    outs:
+    - path: gen/label_mapped_filtered.csv
+      hash: md5
+      md5: a8a3710dde001257c1087be19a9b91d1
+      size: 46269243
+    - path: gen/labels_def.csv
+      hash: md5
+      md5: e37b8694b6f348072645963d9173daba
+      size: 100190797
+    - path: gen/labels_string_df.csv
+      hash: md5
+      md5: b6f7fa31d117f5b80669181e28156af3
+      size: 34758863

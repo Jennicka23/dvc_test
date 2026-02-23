@@ -267,3 +267,19 @@ stages:
       hash: md5
       md5: 91791fc830c527737269e256798a5f0b
       size: 1012
+  create_folds:
+    cmd: python src-modeling/1.2_train_val_dataset.py
+    deps:
+    - path: gen/data_def_train.csv
+      hash: md5
+      md5: dfc128ae659522e57ef25406179c3323
+      size: 55177911
+    - path: src-modeling/1.2_train_val_dataset.py
+      hash: md5
+      md5: 1edaef61b4009c716dfb502f3d144499
+      size: 2879
+    outs:
+    - path: gen/data_def_train_folds.csv
+      hash: md5
+      md5: 8594e734f109620ac96d9100e040c67d
+      size: 55997722

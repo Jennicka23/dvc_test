@@ -70,9 +70,9 @@ stages:
       - plots/
 
   split_data:
-    cmd: python src-modeling/1_split_data.py
+    cmd: python src-modeling/1.0_split_dataset.py
     deps:
-      - src-modeling/1_split_data.py
+      - src-modeling/1.0_split_dataset.py
       - results/data_def.csv
     outs:
       - gen/main_stratify_counts.csv

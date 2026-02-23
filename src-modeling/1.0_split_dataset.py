@@ -127,6 +127,7 @@ plt.axvline(x=0.25, color="red", linestyle="--", label="0.25% threshold")
 plt.legend()
 
 plt.tight_layout()
+plt.savefig("plots/stratification_distribution.png", dpi=300, bbox_inches='tight')
 plt.show()
 
 

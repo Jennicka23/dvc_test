@@ -1,0 +1,9 @@
+stages:
+  prepare_data:
+    cmd: python src-preparation/1_retrieve_dataset.py
+    deps:
+      - src-preparation/1_retrieve_dataset.py
+      - data/openfoodfacts-products.jsonl.gz
+    outs:
+      - gen/off_selected_fields_filtered.csv
+      - gen/openfoodfacts_10records.txt

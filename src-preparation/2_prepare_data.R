@@ -9,7 +9,7 @@ pacman::p_load(dplyr, tidyr, purrr, tibble, readr, stringr, here, jsonlite, ggpl
 
 # ---------------------------- 2. Input ---------------------------------------#
 
-data <- read_csv("../gen/off_selected_fields_filtered.csv")
+data <- read_csv("gen/off_selected_fields_filtered.csv")
 
 main_data <- data %>% select(barcode, generic_name_en, labels_tags, nutriscore_2021_tags, nutriscore_2023_tags, nutriscore_score, nova_group, categories_hierarchy)
 rm(data); gc()
@@ -82,8 +82,8 @@ main_data <- main_data %>%
 main_data %>% filter(cat_level1 == "null") %>% summarise(n_barcodes = n_distinct(barcode))
 
 # --------------------------- 4. Output  --------------------------------#
-write_csv(main_data, "../gen/main_data.csv")
-write_csv(label_freq, "../gen/label_freq.csv")
-write_csv(labels_long, "../gen/labels_long.csv")
-write_csv(categories_long, "../gen/categories_long.csv")
-write_csv(categories_wide, "../gen/categories_wide.csv")
+write_csv(main_data, "gen/main_data.csv")
+write_csv(label_freq, "gen/label_freq.csv")
+write_csv(labels_long, "gen/labels_long.csv")
+write_csv(categories_long, "gen/categories_long.csv")
+write_csv(categories_wide, "gen/categories_wide.csv")

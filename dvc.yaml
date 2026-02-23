@@ -58,3 +58,13 @@ stages:
       - gen/data_def_cat123.csv
       - gen/data_def_cat3.csv
       - gen/data_def_cat23.csv
+
+  explore:
+    cmd: Rscript src-preparation/6_explore_final_dataset.R
+    deps:
+      - src-preparation/6_explore_final_dataset.R
+      - results/data_def.csv
+      - gen/label_freq.csv
+      - gen/labels_long.csv
+    outs:
+      - plots/

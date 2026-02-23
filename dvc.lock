@@ -1,0 +1,22 @@
+schema: '2.0'
+stages:
+  prepare_data:
+    cmd: python src-preparation/1_retrieve_dataset.py
+    deps:
+    - path: data/openfoodfacts-products.jsonl.gz
+      hash: md5
+      md5: b265ce845922d5c969381e0c9a09459c
+      size: 9877182037
+    - path: src-preparation/1_retrieve_dataset.py
+      hash: md5
+      md5: ef5f74af6198070a2e0935376f70327d
+      size: 6420
+    outs:
+    - path: gen/off_selected_fields_filtered.csv
+      hash: md5
+      md5: 01cc324969a6352dbaed554bb7f8cc0f
+      size: 1363560418
+    - path: gen/openfoodfacts_10records.txt
+      hash: md5
+      md5: 0e2845e430750f1893590383a74a17fe
+      size: 227002

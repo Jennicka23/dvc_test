@@ -296,8 +296,8 @@ stages:
       size: 55997722
     - path: src-modeling/2.0.1_eval_nutri_baseline.py
       hash: md5
-      md5: f800a1a0f400573e489f029ed65eb5ab
-      size: 9603
+      md5: 63072fb919d55d447b1e04b2fbb1c710
+      size: 9594
     params:
       params.yaml:
         baseline:
@@ -314,7 +314,7 @@ stages:
       size: 66279886
     - path: results/logreg_nutri_eval_metrics_train_test_core.csv
       hash: md5
-      md5: 513586c9453f6bb5eb6592fb9df48c92
+      md5: c3873c8bafabb5245fe7b419b58d1ac6
       size: 2431
     - path: results/logreg_nutri_phase_coverage_stats.csv
       hash: md5
@@ -333,8 +333,8 @@ stages:
       size: 55997722
     - path: src-modeling/2.0.2_eval_nova_baseline.py
       hash: md5
-      md5: fd1da868a76e6c0856d90ed8310e656c
-      size: 8677
+      md5: 043b6944282e0652f1ef1b8bb2886b31
+      size: 8668
     params:
       params.yaml:
         baseline:
@@ -351,7 +351,7 @@ stages:
       size: 66279886
     - path: results/logreg_nova_eval_metrics_train_test_core.csv
       hash: md5
-      md5: 031235dcf7f7f6e94315c6e6ce53b6cc
+      md5: 6d3254b1d7bd4bfd0053b3bcbec30335
       size: 2430
     - path: results/logreg_nova_phase_coverage_stats.csv
       hash: md5

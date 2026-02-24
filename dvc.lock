@@ -478,10 +478,10 @@ stages:
       size: 2447
     - path: src-modeling/3.0_model_comparison.py
       hash: md5
-      md5: 83c7549f293d927378362c4a409b03d4
-      size: 1293
+      md5: 4d960b8620b6d0f59dcf64dfd866447a
+      size: 1343
     outs:
-    - path: results/final_model_comparison_table.csv
+    - path: results/final_model_comparison.json
       hash: md5
-      md5: 5a69dedad5c2e09d2e57e64fe1a1637c
-      size: 140
+      md5: 009458b57f4955dba0d8a701f1039e19
+      size: 161

@@ -155,3 +155,16 @@ stages:
         - results/rf_nova_phase_coverage_stats.csv
         - results/data_def_train_with_rf_nova_preds.csv
         - results/data_def_test_with_rf_nova_preds.csv
+
+
+  compare_models:
+    cmd: python src-modeling/3.0_model_comparison.py
+    deps:
+      - src-modeling/3.0_model_comparison.py
+      - results/logreg_nutri_eval_metrics_train_test_core.csv
+      - results/logreg_nova_eval_metrics_train_test_core.csv
+      - results/rf_nutri_eval_metrics_train_test_core.csv
+      - results/rf_nova_eval_metrics_train_test_core.csv
+    metrics:
+      - results/final_model_comparison_table.csv:
+          cache: false

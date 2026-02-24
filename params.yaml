@@ -16,7 +16,7 @@ rf_nutri:
   phase2:
     n_estimators: 100
   phase3:
-    n_estimators: 100
+    n_estimators: 200
 
 rf_nova:
   base:
@@ -33,5 +33,5 @@ rf_nova:
     n_estimators: 100
     max_features: "log2"
   phase3:
-    n_estimators: 100
+    n_estimators: 200
     max_features: "log2"

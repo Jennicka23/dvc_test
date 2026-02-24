@@ -267,7 +267,7 @@ print("\n=== Coverage stats per phase & dataset ===")
 print(coverage_df)
 
 # 8. Save outputs
-metrics_df.to_csv("results/logreg_nutri_eval_metrics_train_test_core.csv", sep=";", index=False)
+metrics_df.to_csv("results/logreg_nutri_eval_metrics_train_test_core.csv", index=False)
 coverage_df.to_csv("results/logreg_nutri_phase_coverage_stats.csv", sep=";", index=False)
 train.to_csv("results/data_def_train_with_baseline_nutri_preds.csv", sep=";", index=False)
 test.to_csv("results/data_def_test_with_baseline_nutri_preds.csv", sep=";", index=False)

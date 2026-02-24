@@ -357,3 +357,52 @@ stages:
       hash: md5
       md5: 9be8dbc660ddddbc9a7a6d891ab03f91
       size: 516
+  eval_nutri_rf:
+    cmd: python src-modeling/2.1.1_eval_nutri_rf.py
+    deps:
+    - path: gen/data_def_test.csv
+      hash: md5
+      md5: 0837225d6f666c7b6d41e8197bf948ad
+      size: 24065401
+    - path: gen/data_def_train_folds.csv
+      hash: md5
+      md5: 8594e734f109620ac96d9100e040c67d
+      size: 55997722
+    - path: src-modeling/2.1.1_eval_nutri_rf.py
+      hash: md5
+      md5: d4c3fd144328d58cb84f8a57eca2126a
+      size: 8722
+    params:
+      params.yaml:
+        rf_nutri:
+          base:
+            random_state: 42
+            n_jobs: -1
+            max_depth:
+            min_samples_split: 10
+            min_samples_leaf: 1
+            class_weight: balanced
+            max_features: log2
+          phase1:
+            n_estimators: 50
+          phase2:
+            n_estimators: 100
+          phase3:
+            n_estimators: 100
+    outs:
+    - path: results/data_def_test_with_rf_nutri_preds.csv
+      hash: md5
+      md5: 16a2792a85b0321aad32f9760ed3fe18
+      size: 28466477
+    - path: results/data_def_train_with_rf_nutri_preds.csv
+      hash: md5
+      md5: 468fea467bd14dca667b8cd48a95ac49
+      size: 66279904
+    - path: results/rf_nutri_eval_metrics_train_test_core.csv
+      hash: md5
+      md5: f1b7c42cd6f9b2e9ed533534b524d05f
+      size: 2447
+    - path: results/rf_nutri_phase_coverage_stats.csv
+      hash: md5
+      md5: 9be8dbc660ddddbc9a7a6d891ab03f91
+      size: 516

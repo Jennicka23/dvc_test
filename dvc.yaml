@@ -123,3 +123,19 @@ stages:
       - results/logreg_nova_phase_coverage_stats.csv
       - results/data_def_train_with_baseline_nova_preds.csv
       - results/data_def_test_with_baseline_nova_preds.csv
+
+  eval_nutri_rf:
+      cmd: python src-modeling/2.1.1_eval_nutri_rf.py
+      params:
+        - rf_nutri 
+      deps:
+        - src-modeling/2.1.1_eval_nutri_rf.py
+        - gen/data_def_train_folds.csv
+        - gen/data_def_test.csv
+      metrics:
+        - results/rf_nutri_eval_metrics_train_test_core.csv:
+            cache: false
+      outs:
+        - results/rf_nutri_phase_coverage_stats.csv
+        - results/data_def_train_with_rf_nutri_preds.csv
+        - results/data_def_test_with_rf_nutri_preds.csv

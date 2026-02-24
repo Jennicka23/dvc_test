@@ -320,3 +320,40 @@ stages:
       hash: md5
       md5: 9be8dbc660ddddbc9a7a6d891ab03f91
       size: 516
+  eval_nova_baseline:
+    cmd: python src-modeling/2.0.2_eval_nova_baseline.py
+    deps:
+    - path: gen/data_def_test.csv
+      hash: md5
+      md5: 0837225d6f666c7b6d41e8197bf948ad
+      size: 24065401
+    - path: gen/data_def_train_folds.csv
+      hash: md5
+      md5: 8594e734f109620ac96d9100e040c67d
+      size: 55997722
+    - path: src-modeling/2.0.2_eval_nova_baseline.py
+      hash: md5
+      md5: fd1da868a76e6c0856d90ed8310e656c
+      size: 8677
+    params:
+      params.yaml:
+        baseline:
+          solver: saga
+          random_state: 42
+    outs:
+    - path: results/data_def_test_with_baseline_nova_preds.csv
+      hash: md5
+      md5: 0a9c437c304aca5713d25400de93a07a
+      size: 28466459
+    - path: results/data_def_train_with_baseline_nova_preds.csv
+      hash: md5
+      md5: 397651fe160bec3fa416b7f2fdaf0ebb
+      size: 66279886
+    - path: results/logreg_nova_eval_metrics_train_test_core.csv
+      hash: md5
+      md5: 031235dcf7f7f6e94315c6e6ce53b6cc
+      size: 2430
+    - path: results/logreg_nova_phase_coverage_stats.csv
+      hash: md5
+      md5: 9be8dbc660ddddbc9a7a6d891ab03f91
+      size: 516

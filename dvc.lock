@@ -388,20 +388,20 @@ stages:
           phase2:
             n_estimators: 100
           phase3:
-            n_estimators: 200
+            n_estimators: 100
     outs:
     - path: results/data_def_test_with_rf_nutri_preds.csv
       hash: md5
-      md5: d00140c6dde77ae89ba2208a98b9e5f4
+      md5: 16a2792a85b0321aad32f9760ed3fe18
       size: 28466477
     - path: results/data_def_train_with_rf_nutri_preds.csv
       hash: md5
-      md5: 4230e09954ad97ee5e301d0f704bdd63
+      md5: 468fea467bd14dca667b8cd48a95ac49
       size: 66279904
     - path: results/rf_nutri_eval_metrics_train_test_core.csv
       hash: md5
-      md5: f19a594031f6da01d1a7713f366420ba
-      size: 2440
+      md5: f1b7c42cd6f9b2e9ed533534b524d05f
+      size: 2447
     - path: results/rf_nutri_phase_coverage_stats.csv
       hash: md5
       md5: 9be8dbc660ddddbc9a7a6d891ab03f91
@@ -438,21 +438,21 @@ stages:
             n_estimators: 100
             max_features: log2
           phase3:
-            n_estimators: 200
+            n_estimators: 100
             max_features: log2
     outs:
     - path: results/data_def_test_with_rf_nova_preds.csv
       hash: md5
-      md5: 4e45b22eede5aa24be341c642b77bf65
+      md5: 5c58793b6dbec0c44625a7e3df05a8bb
       size: 28466477
     - path: results/data_def_train_with_rf_nova_preds.csv
       hash: md5
-      md5: 50e622df991e2b6e2b8b4291293cecc1
+      md5: b48f6b12e695e3864aa21c16dc819237
       size: 66279904
     - path: results/rf_nova_eval_metrics_train_test_core.csv
       hash: md5
-      md5: fcb101bd59626a26c7c8b02c5aa420cf
-      size: 2422
+      md5: 4194cb75eb5cbaf3c3fa186692608b6b
+      size: 2427
     - path: results/rf_nova_phase_coverage_stats.csv
       hash: md5
       md5: 9be8dbc660ddddbc9a7a6d891ab03f91
@@ -470,12 +470,12 @@ stages:
       size: 2431
     - path: results/rf_nova_eval_metrics_train_test_core.csv
       hash: md5
-      md5: fcb101bd59626a26c7c8b02c5aa420cf
-      size: 2422
+      md5: 4194cb75eb5cbaf3c3fa186692608b6b
+      size: 2427
     - path: results/rf_nutri_eval_metrics_train_test_core.csv
       hash: md5
-      md5: f19a594031f6da01d1a7713f366420ba
-      size: 2440
+      md5: f1b7c42cd6f9b2e9ed533534b524d05f
+      size: 2447
     - path: src-modeling/3.0_model_comparison.py
       hash: md5
       md5: 4d960b8620b6d0f59dcf64dfd866447a
@@ -483,5 +483,5 @@ stages:
     outs:
     - path: results/final_model_comparison.json
       hash: md5
-      md5: 0a873e3b3eb0619419bc43dece06f3bf
+      md5: 009458b57f4955dba0d8a701f1039e19
       size: 161

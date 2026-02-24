@@ -457,3 +457,31 @@ stages:
       hash: md5
       md5: 9be8dbc660ddddbc9a7a6d891ab03f91
       size: 516
+  compare_models:
+    cmd: python src-modeling/3.0_model_comparison.py
+    deps:
+    - path: results/logreg_nova_eval_metrics_train_test_core.csv
+      hash: md5
+      md5: 6d3254b1d7bd4bfd0053b3bcbec30335
+      size: 2430
+    - path: results/logreg_nutri_eval_metrics_train_test_core.csv
+      hash: md5
+      md5: c3873c8bafabb5245fe7b419b58d1ac6
+      size: 2431
+    - path: results/rf_nova_eval_metrics_train_test_core.csv
+      hash: md5
+      md5: 4194cb75eb5cbaf3c3fa186692608b6b
+      size: 2427
+    - path: results/rf_nutri_eval_metrics_train_test_core.csv
+      hash: md5
+      md5: f1b7c42cd6f9b2e9ed533534b524d05f
+      size: 2447
+    - path: src-modeling/3.0_model_comparison.py
+      hash: md5
+      md5: 83c7549f293d927378362c4a409b03d4
+      size: 1293
+    outs:
+    - path: results/final_model_comparison_table.csv
+      hash: md5
+      md5: 5a69dedad5c2e09d2e57e64fe1a1637c
+      size: 140

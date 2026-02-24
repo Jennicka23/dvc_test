@@ -6,6 +6,7 @@
 
 import pandas as pd
 import os
+import json
 
 results_files = {
     "Nutri-Baseline": "results/logreg_nutri_eval_metrics_train_test_core.csv",
@@ -36,9 +37,11 @@ comparison_df = pd.DataFrame(summary_list)
 # Sort so the best model is at the top
 comparison_df = comparison_df.sort_values("BalAcc", ascending=False)
 
-# Save with standard comma (NO SEMICOLONS) for DVC
-comparison_df.to_csv("results/final_model_comparison_table.csv", index=False)
+leaderboard = comparison_df.set_index('Model')['BalAcc'].to_dict()
 
-print("\n--- Clean Comparison (Phase 3 Test-Core) ---")
-print(comparison_df.to_string(index=False))
+# Save as JSON with indentation for a perfect vertical view
+with open("results/final_model_comparison.json", "w") as f:
+    json.dump(leaderboard, f, indent=4)
+
+print("\nJSON saved for DVC metrics.")
 

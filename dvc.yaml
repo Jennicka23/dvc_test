@@ -157,5 +157,5 @@ stages:
       - results/rf_nutri_eval_metrics_train_test_core.csv
       - results/rf_nova_eval_metrics_train_test_core.csv
     metrics:
-      - results/final_model_comparison_table.csv:
+      - results/final_model_comparison.json:
           cache: false

@@ -406,3 +406,54 @@ stages:
       hash: md5
       md5: 9be8dbc660ddddbc9a7a6d891ab03f91
       size: 516
+  eval_nova_rf:
+    cmd: python src-modeling/2.1.2_eval_nova_rf.py
+    deps:
+    - path: gen/data_def_test.csv
+      hash: md5
+      md5: 0837225d6f666c7b6d41e8197bf948ad
+      size: 24065401
+    - path: gen/data_def_train_folds.csv
+      hash: md5
+      md5: 8594e734f109620ac96d9100e040c67d
+      size: 55997722
+    - path: src-modeling/2.1.2_eval_nova_rf.py
+      hash: md5
+      md5: a61e45d65ff1d9c96de67fe10bc1ccb9
+      size: 8780
+    params:
+      params.yaml:
+        rf_nova:
+          base:
+            random_state: 42
+            n_jobs: -1
+            max_depth:
+            min_samples_split: 10
+            min_samples_leaf: 1
+            class_weight: balanced
+          phase1:
+            n_estimators: 50
+            max_features: sqrt
+          phase2:
+            n_estimators: 100
+            max_features: log2
+          phase3:
+            n_estimators: 100
+            max_features: log2
+    outs:
+    - path: results/data_def_test_with_rf_nova_preds.csv
+      hash: md5
+      md5: 5c58793b6dbec0c44625a7e3df05a8bb
+      size: 28466477
+    - path: results/data_def_train_with_rf_nova_preds.csv
+      hash: md5
+      md5: b48f6b12e695e3864aa21c16dc819237
+      size: 66279904
+    - path: results/rf_nova_eval_metrics_train_test_core.csv
+      hash: md5
+      md5: bd9ca4e117482f5c3ecd05431259a07c
+      size: 2427
+    - path: results/rf_nova_phase_coverage_stats.csv
+      hash: md5
+      md5: 9be8dbc660ddddbc9a7a6d891ab03f91
+      size: 516
